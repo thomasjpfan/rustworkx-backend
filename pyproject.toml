@@ -1,0 +1,22 @@
+[project]
+name = "rustworkx-backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["rustworkx>=0.15.1"]
+
+
+[build-system]
+build-backend = 'setuptools.build_meta'
+requires = ['setuptools>=61.2']
+
+[project.entry-points."networkx.backends"]
+rustworkx = "rustworkx_backend:BackendInterface"
+
+[project.entry-points."networkx.backend_info"]
+rustworkx = "_rustworkx_backend:get_info"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
